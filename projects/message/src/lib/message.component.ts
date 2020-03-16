@@ -1,16 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+// Notice: Add the below line will trigger the bug
+// import { ContainerComponent } from './container.component';
 @Component({
   selector: 'lib-message',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    {{message}}
-  `,
-  styles: []
+    {{ message }}
+  `
 })
-export class MessageComponent implements OnInit {
+export class MessageComponent {
   @Input() message = '';
-  constructor() {}
-
-  ngOnInit(): void {}
 }

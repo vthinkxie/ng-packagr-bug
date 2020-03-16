@@ -3,8 +3,9 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 @Component({
   selector: 'lib-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './container.component.html',
-  styleUrls: ['./container.component.css']
+  template: `
+    <lib-message *ngFor="let message of messages" [message]="message"></lib-message>
+  `
 })
 export class ContainerComponent implements OnInit {
   messages = [];
